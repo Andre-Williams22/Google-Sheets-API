@@ -15,6 +15,17 @@ func checkError(err error) {
 	}
 }
 
+// func writeJSON(data ) {
+// 	file, err := json.MarshalIndent(data, "", " ")
+// 	if err != nil {
+// 		log.Println("unable to create json file")
+// 		return
+// 	}
+
+// 	_ = ioutil.WriteFile("data.json", file, 0644)
+
+// }
+
 func main() {
 	data, err := ioutil.ReadFile("secret.json")
 	checkError(err)
@@ -28,7 +39,7 @@ func main() {
 	// spreadsheetID := "1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms"
 	spreadsheetID := "1fpHkn3ascb5sTCuSENTM1f9-qS98CTDnhBQkT0KSd0E"
 
-	readRange := "Sheet1!C3:40"
+	readRange := "Sheet1!C2:40"
 	resp, err := srv.Spreadsheets.Values.Get(spreadsheetID, readRange).Do()
 	// fmt.Println(resp)
 	checkError(err)
@@ -38,7 +49,9 @@ func main() {
 	} else {
 		fmt.Println("Name, Major:")
 		for _, row := range resp.Values {
-			fmt.Printf("%s, %s\n", row[0], row[1])
+			fmt.Printf("%s, %s\n", row[0], row[5])
+			// writeJSON(row[0], row[5])
+
 		}
 	}
 }
