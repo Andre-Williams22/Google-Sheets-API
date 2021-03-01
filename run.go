@@ -28,7 +28,7 @@ func main() {
 	// spreadsheetID := "1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms"
 	spreadsheetID := "1fpHkn3ascb5sTCuSENTM1f9-qS98CTDnhBQkT0KSd0E"
 
-	readRange := "Sheet1!A1:I1"
+	readRange := "Sheet1!C3:40"
 	resp, err := srv.Spreadsheets.Values.Get(spreadsheetID, readRange).Do()
 	// fmt.Println(resp)
 	checkError(err)
@@ -38,7 +38,7 @@ func main() {
 	} else {
 		fmt.Println("Name, Major:")
 		for _, row := range resp.Values {
-			fmt.Printf("%s, %s\n", row[0], row[4])
+			fmt.Printf("%s, %s\n", row[0], row[1])
 		}
 	}
 }
