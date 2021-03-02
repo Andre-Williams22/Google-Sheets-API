@@ -77,8 +77,10 @@ func main() {
 			}
 
 			// writeJSON(row[0], row[5])
+			// add data to list
 			customer_data = append(customer_data, spreadsheet_data)
 
+			// convert list to Json
 			writeJSON(customer_data)
 
 			counter++
@@ -95,5 +97,10 @@ func writeJSON(data []Customers) {
 	}
 
 	_ = ioutil.WriteFile("customer_data.json", file, 0644)
+
+	// ToDo:
+	// 1. Open Json
+	// 2. Send sms
+	// 3. Write Tests
 
 }
