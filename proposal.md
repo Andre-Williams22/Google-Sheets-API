@@ -12,4 +12,3 @@ This script will make the job of fulfilling customer satisfaction easier.
 3. We'll load all the names and phone numbers from the json file and send them the customized text message with their name to their phone number.
 
 4. Both team and the customers are satisfied and can go along with their happy day.
-
