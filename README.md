@@ -26,7 +26,7 @@ A suite of tools that makes your MakeSchool life easier!
 
 ```bash
 # clone the repo
-git clone https://github.com/tempor1s/msconsole
+git clone https://github.com/Andre-Williams22
 # cd into the repo
 cd msconsole
 # run the program locally
