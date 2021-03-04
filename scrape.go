@@ -66,12 +66,22 @@ func sendMessage(to, from, message string) {
 		decoder := json.NewDecoder(response.Body)
 		err := decoder.Decode(&data)
 		if err == nil {
-			fmt.Println(data["sid"])
+			fmt.Println(data["body"])
+
 		}
 	} else {
 		fmt.Println(response.Status)
 	}
 
+	// return message
+
+}
+
+func numPeople(counter int) (total int) {
+
+	total = counter + 1
+
+	return total
 }
 
 func main() {
@@ -95,7 +105,7 @@ func main() {
 	srv, err := sheets.New(client)
 	checkError(err)
 
-	SPREADSHEETID := "1Wdzf3Mu31WA7cuUQnysWa0u7Ny8lYSxjHlMeWlBhEng" //os.Getenv("SPREADSHEETID")
+	SPREADSHEETID := os.Getenv("TEST_SHEET")
 
 	// fmt.Println(SPREADSHEETID)
 	// grab specific cells
@@ -134,6 +144,9 @@ func main() {
 		}
 
 	}
+
+	// calculates total num people
+	numPeople(counter)
 
 	// Read's in Customer Data
 	file, err := ioutil.ReadFile("customer_data.json")
