@@ -45,6 +45,6 @@ Anyone is welcome to contribute!
 
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/Andre-Williams22"><img src="https://avatars0.githubusercontent.com/u/29741401?s=460&u=1ca03db5bbb7046bab14f72b7d6e801b9b0ac6f0&v=4" width="75px;" alt="Andre Williams"/><br /><sub><b>Andre Williams</b></sub></a><br /><a href="https://github.com/Andre-Williams22/msconsole/commits?author=Andre-Williams22" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Andre-Williams22"><br /><sub><b>Andre Williams</b></sub></a><br /><a href="https://github.com/Andre-Williams22/msconsole/commits?author=Andre-Williams22" title="Code">💻</a></td>
 
   </tr>

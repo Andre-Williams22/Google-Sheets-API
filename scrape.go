@@ -86,6 +86,18 @@ func numPeople(counter int) (total int) {
 	return total
 }
 
+// writeJSON writes data to a Json file
+func writeJSON(data []Customers) {
+	file, err := json.MarshalIndent(data, "", " ")
+	if err != nil {
+		log.Println("unable to create json file")
+		return
+	}
+
+	_ = ioutil.WriteFile("customer_data.json", file, 0644)
+
+}
+
 func main() {
 	// load in environment variable
 	err := godotenv.Load()
@@ -119,7 +131,7 @@ func main() {
 	if len(resp.Values) == 0 {
 		fmt.Println("No data found.")
 	} else {
-		fmt.Println("Name, Major:")
+		fmt.Println("Name, Number")
 		for _, row := range resp.Values {
 			// row = interface
 
@@ -170,20 +182,8 @@ func main() {
 		fmt.Printf("Name: %s \n", x.Name)
 		fmt.Printf("Number: %s \n", x.Number)
 
-		sendMessage(x.Number, os.Getenv("TWILIO_NUMBER"), fmt.Sprintf("Hello %s", x.Name))
+		sendMessage(x.Number, os.Getenv("TWILIO_NUMBER"), fmt.Sprintf("Hello %s", x.Name+"thanks for using Hancock Appliance Repair, please fill out our survey: https://www.surveymonkey.com/r/GZB6CRY"))
 
 	}
-
-}
-
-// writeJSON writes data to a Json file
-func writeJSON(data []Customers) {
-	file, err := json.MarshalIndent(data, "", " ")
-	if err != nil {
-		log.Println("unable to create json file")
-		return
-	}
-
-	_ = ioutil.WriteFile("customer_data.json", file, 0644)
 
 }
