@@ -1,7 +1,7 @@
 # Google-Sheets-API
 
 <p align="center">
-Hancock Appliance Scraper
+Hancock Appliance Automation Script
 <br>
 <br>
 A suite of tools that makes your MakeSchool life easier!
@@ -28,7 +28,7 @@ A suite of tools that makes your MakeSchool life easier!
 # clone the repo
 git clone https://github.com/Andre-Williams22
 # cd into the repo
-cd msconsole
+cd google-sheets-api
 # run the program locally
 go run scrape.go
 ```
