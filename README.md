@@ -4,7 +4,7 @@
 Hancock Appliance Automation Script
 <br>
 <br>
-A suite of tools that makes your MakeSchool life easier!
+A suite of tool to automate customer satisfaction!
 </p>
 <p align="center">
   <a>
