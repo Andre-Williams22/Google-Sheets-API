@@ -39,6 +39,7 @@ func checkError(err error) {
 	}
 }
 
+// sendMessage sends a text to specific users
 func sendMessage(to, from, message string) {
 
 	// Load Twilio API Info
@@ -77,6 +78,7 @@ func sendMessage(to, from, message string) {
 
 }
 
+// numPeople counts number of people in our file
 func numPeople(counter int) (total int) {
 
 	total = counter + 1
@@ -174,7 +176,7 @@ func main() {
 
 }
 
-// writes data to Json
+// writeJSON writes data to a Json file
 func writeJSON(data []Customers) {
 	file, err := json.MarshalIndent(data, "", " ")
 	if err != nil {
@@ -183,11 +185,5 @@ func writeJSON(data []Customers) {
 	}
 
 	_ = ioutil.WriteFile("customer_data.json", file, 0644)
-
-	// ToDo:
-	// 1. Open Json
-
-	// 2. Send sms
-	// 3. Write Tests
 
 }
