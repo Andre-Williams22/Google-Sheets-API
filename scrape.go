@@ -133,11 +133,6 @@ func main() {
 	} else {
 		fmt.Println("Name, Number")
 		for _, row := range resp.Values {
-			// row = interface
-
-			// r, okay := row[0].(string)
-
-			// fmt.Println(r, okay)
 
 			fmt.Printf("%s, %s\n", row[0], row[2])
 
@@ -147,19 +142,19 @@ func main() {
 				Number: row[2].(string),
 			}
 
-			// writeJSON(row[0], row[5])
 			// add data to list
 			customer_data = append(customer_data, spreadsheet_data)
 
 			// convert list to Json
 			writeJSON(customer_data)
 
+			// increment counter
 			counter++
 		}
 
 	}
 
-	// calculates total num people
+	// calculates total num people in our db
 	numPeople(counter)
 
 	// Read's in Customer Data
@@ -181,7 +176,7 @@ func main() {
 	for _, x := range clients {
 		fmt.Printf("Name: %s \n", x.Name)
 		fmt.Printf("Number: %s \n", x.Number)
-
+		// sends message
 		sendMessage(x.Number, os.Getenv("TWILIO_NUMBER"), fmt.Sprintf("Hello %s", x.Name+"thanks for using Hancock Appliance Repair, please fill out our survey: https://www.surveymonkey.com/r/GZB6CRY"))
 
 	}
